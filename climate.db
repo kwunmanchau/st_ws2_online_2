@@ -1,0 +1,14 @@
+import sqlite3
+
+conn = sqlite3.connect('climate.db')
+
+cursor = conn.cursor()
+
+cursor.execute('SELECT * FROM ClimateData')
+
+data = cursor.fetchall()
+
+for row in data:
+    print(row)
+
+conn.close()
